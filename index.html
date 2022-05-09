@@ -34,9 +34,13 @@
 
             <div class="todos">
                 <ul>
-                    <li v-for="(item, index) in todos" :class="{ 'todo-done': item.done }" @click="gestisciClick(index)">
-                        {{ item.text }}
-                        <span><i class="fas fa-trash-alt"></i></span>
+                    <li v-for="(item, index) in todos" :class="{ 'todo-done': item.done }" >
+                        <span @click="gestisciClick(index)">
+                            {{ item.text }}
+                        </span>
+                        <span @click="deleteTodo(index)">
+                            <i class="fas fa-trash-alt"></i>
+                        </span>
                     </li>
                 </ul>
             </div>

@@ -58,6 +58,10 @@ button {
     background-color: rgb(238, 238, 238);
 }
 
+.todos span:first-child {
+    width: 100%;
+}
+
 .todo-done {
     text-decoration: line-through;
 }

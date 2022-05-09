@@ -37,7 +37,11 @@ const app = new Vue(
                     
                     );
                 this.newTodo = '';
-           }
+           },
+           deleteTodo(index) {
+               console.log("cancello l'elemento", index);
+            
+               this.todos.splice(index, 1);           }
         },
     }
 )
