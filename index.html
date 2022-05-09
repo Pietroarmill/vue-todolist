@@ -7,7 +7,13 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-</head>
+
+    <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" 
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" 
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer" /></head>
 <body>
 
     <!-- Header -->
@@ -22,18 +28,18 @@
         <main>
 
             <div class="add-todo">
-                <input type="text" placeholder="Scrivi qui">
-                <button>Aggiungi</button>
+                <input type="text" placeholder="Scrivi qui" v-model="newTodo">
+                <button @click="addTodo">Aggiungi</button>
             </div>
 
             <div class="todos">
                 <ul>
-                    <li>fare la spesa</li>
-                    <li>fare la spesa</li>
-                    <li>fare la spesa</li>
+                    <li v-for="(item, index) in todos" :class="{ 'todo-done': item.done }" @click="gestisciClick(index)">
+                        {{ item.text }}
+                        <span><i class="fas fa-trash-alt"></i></span>
+                    </li>
                 </ul>
             </div>
-
 
         </main>
         <!-- /Main -->
