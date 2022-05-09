@@ -29,13 +29,15 @@ const app = new Vue(
                this.todos[index].done = !this.todos[index].done;
            },
            addTodo: function() {
-                this.todos.push(
+                if ( this.newTodo !== '' ) {
+                    this.todos.push(
                         {
                             text: this.newTodo,
                             done: false
-                        }
-                    
+                        }  
                     );
+                }
+                
                 this.newTodo = '';
            },
            deleteTodo(index) {

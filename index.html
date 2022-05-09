@@ -28,7 +28,7 @@
         <main>
 
             <div class="add-todo">
-                <input type="text" placeholder="Scrivi qui" v-model="newTodo">
+                <input type="text" placeholder="Scrivi qui" v-model="newTodo" @keyup.enter="addTodo">
                 <button @click="addTodo">Aggiungi</button>
             </div>
 
